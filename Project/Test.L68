@@ -1,0 +1,68 @@
+00007000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.15.02
+Created On: 5/29/2015 3:50:03 PM
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * Title      :
+00000000                             3  * Written by :
+00000000                             4  * Date       :
+00000000                             5  * Description:
+00000000                             6  *-----------------------------------------------------------
+00007000                             7      ORG    $7000
+00007000                             8  START:                  ; first instruction of program
+00007000                             9             
+00007000  9179 AAAA2222             10             SUB.W        D0, $AAAA2222
+00007006  9042                      11             SUB.W        D2, D0
+00007008  6000 F8F6                 12             BRA         $6900
+0000700C  6000 00F2                 13             BRA          $7100
+00007010  6000 93EE                 14             BRA          $0400
+00007014  B745                      15             EOR.W          D3, D5
+00007016  D8C4                      16             ADDA         D4, A4
+00007018                            17             
+00007018  E007                      18              ASR.B        #$8, D7
+0000701A  E660                      19             ASR.W        D3, D0
+0000701C  E0D4                      20             ASR          (A4)
+0000701E  E785                      21             ASL.L        #$3, D5
+00007020  E561                      22             ASL.W        D2, D1
+00007022  E1DA                      23             ASL          (A2)+
+00007024  E00F                      24             LSR.B        #$8, D7
+00007026  E668                      25             LSR.W        D3, D0
+00007028  E2D4                      26             LSR          (A4)
+0000702A  E78D                      27             LSL.L        #$3, D5
+0000702C  E56C                      28             LSL.W        D2, D4
+0000702E  E3DA                      29             LSL          (A2)+
+00007030  E01F                      30             ROR.B        #$8, D7
+00007032  E678                      31             ROR.W        D3, D0
+00007034  E6D4                      32             ROR          (A4)
+00007036  E79D                      33             ROL.L        #$3, D5
+00007038  E57C                      34             ROL.W        D2, D4
+0000703A  E7DA                      35             ROL          (A2)+
+0000703C  CBC2                      36             MULS         D2, D5
+0000703E  C7FC 0003                 37             MULS         #$3, D3
+00007042  1C3C 0005                 38             MOVE.B       #$5, D6
+00007046  2A03                      39             MOVE.L       D3, D5
+00007048  300D                      40             MOVE.W       A5, D0
+0000704A  3E45                      41             MOVEA.W      D5, A7
+0000704C  2040                      42             MOVEA.L      D0, A0
+0000704E  47D4                      43             LEA          (A4), A3
+00007050  4E92                      44             JSR          (A2)
+00007052  4EB8 7000                 45             JSR          $7000
+00007056  4E75                      46             RTS
+00007058  60E6                      47             BRA          $7040
+0000705A  48A7 8100                 48             MOVEM.W      D0/D7, -(SP)
+0000705E  4C9F 0081                 49             MOVEM.W      (SP)+, D0/D7
+00007062  FFFF FFFF                 50             SIMHALT             ; halt simulator
+00007066                            51  
+00007066= 456E 7465 7220 6...       52  MESSAGE DC.W    'Enter an OP-CODE in Hex: ',0
+00007082                            53  
+00007082                            54      END    START        ; last line of source
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+MESSAGE             7066
+START               7000
